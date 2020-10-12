@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin-home');
+    })->name('admin.home');
+
+    Route::resource('categories', \App\Http\Controllers\Post\CategoryController::class);
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
