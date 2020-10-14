@@ -28,3 +28,7 @@ Route::prefix('admin')->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::prefix('o_O')->group(function() {
+    Route::view('/category', 'admin.categories.category');
+});
