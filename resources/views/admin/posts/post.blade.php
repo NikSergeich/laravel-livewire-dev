@@ -4,5 +4,5 @@
         Категории (рубрики)
     </x-slot>
 
-    <livewire:category-component />
+    <livewire:post-component />
 </x-admin-layout>
